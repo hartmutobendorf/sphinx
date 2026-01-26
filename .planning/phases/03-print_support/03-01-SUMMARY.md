@@ -1,0 +1,1 @@
+Implemented LaTeX/PDF support via `render_d2` refactor and `latex_visit_d2`.

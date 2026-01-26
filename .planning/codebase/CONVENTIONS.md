@@ -1,32 +1,22 @@
-# Conventions
+# Code Conventions
 
-## Coding Style
-- **Python:**
-  - Follows PEP 8.
-  - Enforced by `ruff` (configuration in `pyproject.toml` / `.ruff.toml`).
-  - Formatting via `ruff format`.
-- **Typing:**
-  - Strongly typed codebase.
-  - Checked by `mypy` and `pyright`.
-  - Usage of `typing.TYPE_CHECKING` for circular import avoidance.
-- **Imports:**
-  - Sorted via `ruff` properties (isort equivalent).
-  - `from __future__ import annotations` used consistently.
+## Python
+- **Style Guide**: Follows PEP 8.
+- **Linting**: Enforced by `ruff`.
+- **Formatting**: Enforced by `ruff format`.
+- **Type Hinting**: Extensive use of type hints (`typing` module, `__future__.annotations`). Checked with `mypy` and `pyright`.
+- **Imports**: Sorted and organized.
+- **Docstrings**: Sphinx-style reST docstrings are used for API documentation.
 
-## Naming
-- Classes: CapWords (CamelCase).
-- Functions/Methods: snake_case.
-- Private members: `_leading_underscore`.
-- Constants: UPPER_CASE.
+## JavaScript
+- **Formatting**: Enforced by `prettier`.
 
 ## Documentation
-- **Docstrings:** reStructuredText format.
-- **Style:** Google or Sphinx style (generally Sphinx style given it's the project itself).
+- Written in reStructuredText (rst).
+- Self-hosted in the `doc/` directory.
 
-## Error Handling
-- Custom exceptions defined in `sphinx.errors`.
-- `SphinxError` is the base class.
-
-## Event System
-- Usage of string literals for event names (e.g., `'builder-inited'`).
-- Event handlers connect via `app.connect()`.
+## Testing
+- Tests are located in `tests/`.
+- Heavy reliance on `pytest` fixtures.
+- Test files generally correspond to module names (e.g., `test_application.py` tests `application.py`).
+- "Roots" pattern: `tests/roots/` contains minimal Sphinx projects used as input for functional tests.

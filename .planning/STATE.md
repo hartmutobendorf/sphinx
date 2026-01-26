@@ -1,8 +1,5 @@
 # Project State
 
-**Current Phase:** Phase 1: Core Foundation
-**Status:** Not Started
+**Status:** Complete / Shipped v1.0
 
-## Next Actions
-- Initialize project structure.
-- Implement the basic directive structure for CORE-01.
+**Current Phase:** Done

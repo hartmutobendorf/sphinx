@@ -1,23 +1,24 @@
-# Testing
+# Testing Strategy
 
-## Framework
-- **Runner:** `pytest`
-- **Orchestrator:** `tox` (supports multiple python versions `py312`...`py315`).
+## Frameworks
+- **Python**: `pytest`
+- **JavaScript**: `jasmine` (via `jasmine-browser-runner`)
+- **Orchestration**: `tox`
 
-## Structure
-- **Unit Tests:** Located in `tests/`. Names generally mirror source file names (e.g., `test_application.py` tests `sphinx/application.py`).
-- **Integration Tests:** Many tests operate by running a mini-Sphinx build against a sample "root" directory located in `tests/roots/`.
-- **Fixtures:** Extensive usage of `pytest` fixtures, specifically `app` fixture which provides a `SphinxTestApp` instance.
+## Test Organization
+- **Unit Tests**: Test individual components (parsers, utils).
+- **Integration/Functional Tests**: Most tests involve running a minimal Sphinx build.
+    - Located in `tests/`.
+    - Use `tests/roots/test-*` directories as sample input projects.
+    - The `app` fixture (from `sphinx.testing.fixtures`) is central. It creates a temporary Sphinx application instance pointing to a test root.
 
-## JavaScript Testing
-- **Runner:** `jasmine-browser-runner`
-- **Config:** `tests/js/jasmine-browser.mjs`
-- **Command:** `npm run test`
+## Running Tests
+- **All envs**: `tox`
+- **Specific env**: `tox -e py312`
+- **Directly (dev)**: `pytest` (requires dependencies installed in current env).
+- **Linting**: `tox -e lint` or `tox -e ruff`.
 
-## Continuous Integration
-- Linting (`ruff`, `mypy`, `pyright`) runs as a separate tox environment.
-- Documentation building is also tested (`tox -e docs`).
-- Binary dependencies checked via `bindep` (`tox -e bindep`).
-
-## Coverage
-- `pytest-cov` is likely used (implied standard practice, though not explicitly seen in snippets).
+## Key Fixtures
+- `app`: Provides a `SphinxTestApp` instance.
+- `rootdir`: Path to the directory containing test roots.
+- `make_app`: Factory to create apps with specific configs.

@@ -3,28 +3,28 @@
 ## v1 Requirements
 
 ### Core Integration
-- [ ] **CORE-01**: `.. d2::` directive parses inline D2 code
-- [ ] **CORE-02**: `.. d2::` directive supports `file` option for external source files
-- [ ] **CORE-03**: Extension correctly detects and invokes `d2` binary via subprocess
-- [ ] **CORE-04**: Build fails gracefully with clear error if `d2` is missing
+- [x] **CORE-01**: `.. d2::` directive parses inline D2 code
+- [x] **CORE-02**: `.. d2::` directive supports `file` option for external source files
+- [x] **CORE-03**: Extension correctly detects and invokes `d2` binary via subprocess
+- [x] **CORE-04**: Build fails gracefully with clear error if `d2` is missing
 
 ### Rendering & Output
-- [ ] **REND-01**: Supports SVG output for HTML builders
-- [ ] **REND-02**: Supports PNG/PDF output for LaTeX/PDF builders
-- [ ] **REND-03**: Caches generated images (SHA1) to speed up subsequent builds
+- [x] **REND-01**: Supports SVG output for HTML builders
+- [x] **REND-02**: Supports PNG/PDF output for LaTeX/PDF builders
+- [x] **REND-03**: Caches generated images (SHA1) to speed up subsequent builds
 
 ### Configuration
-- [ ] **CONF-01**: `d2_command` config for custom binary path
-- [ ] **CONF-02**: `d2_theme` config for global theme setting
-- [ ] **CONF-03**: Directive supports local `theme` override
-- [ ] **CONF-04**: `d2_font` and `d2_mono_font` configs for custom fonts
+- [x] **CONF-01**: `d2_command` config for custom binary path
+- [x] **CONF-02**: `d2_config` path to global `d2` file (prepended to diagrams)
+- [x] **CONF-03**: Directive supports local `theme` override - REMOVED (Replaced by global config approach)
+- [x] **CONF-04**: `d2_font` and `d2_mono_font` configs for custom fonts
 
 ### Standard Figure Support
-- [ ] **FIG-01**: Support `:caption:`, `:alt:`, and `:align:` options
+- [x] **FIG-01**: Support `:caption:`, `:alt:`, and `:align:` options
 
 ## v2 Requirements (Deferred)
-- [ ] Interactive editor integration
-- [ ] Bundled d2 binary installation
+- [x] Interactive editor integration
+- [x] Bundled d2 binary installation
 
 ## Out of Scope
 - Live preview while typing (requires JS runtime integration)

@@ -1,18 +1,19 @@
 # Integrations
 
+## Internal Dependencies
+- **Docutils**: The core foundation. Sphinx builds heavily on Docutils nodes, parsers, readers, and writers.
+- **Jinja2**: Used for all HTML templating.
+- **Pygments**: Used for code block syntax highlighting.
+
 ## External Services
-- **PyPI:** Package distribution (Project name "Sphinx")
-- **GitHub:** Source control and issue tracking
-- **ReadTheDocs:** Documentation hosting (detected via `READTHEDOCS` env var in `tox.ini`)
+- **ReadTheDocs**: While not a code dependency, Sphinx is the primary engine for RTD, and configuration often considers RTD environments.
+- **PyPI**: Distribution.
 
-## External APIs
-- **Requests:** Used for link checking and other HTTP interactions (`sphinx.util.requests`)
-
-## System Integrations
-- **TeX Live:** Required for LaTeX PDF output (managed via `bindep` and system package managers like `rpm`, `dpkg`)
-- **Graphviz:** Optional dependency for graphing (often used with `sphinx.ext.graphviz`)
-- **ImageMagick:** Optional for image conversion (implied by `sphinx.ext.imgconverter`)
-
-## Package Managers
-- **pip/flit:** Python package management
-- **npm:** JavaScript dependency management (for testing and themes)
+## Plugins/Extensions
+Sphinx has a massive ecosystem of extensions.
+- **Built-in (`sphinx.ext`)**:
+    - `autodoc`: Generate docs from docstrings.
+    - `intersphinx`: Link to other Sphinx projects.
+    - `napoleon`: Support Google/NumPy style docstrings.
+    - `graphviz`, `mathjax`, `viewcode`, etc.
+- **Third-party**: Configuration typically involves adding packages to the `extensions` list in `conf.py`.
