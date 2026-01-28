@@ -1,0 +1,3 @@
+.d2-figure .d2-dark { display: none; }
+.d2-figure.d2-dark-mode .d2-light { display: none; }
+.d2-figure.d2-dark-mode .d2-dark { display: inline; }
